@@ -16,9 +16,6 @@ public class WalletController
     public void Init(WalletMB walletMB)
     {
         _walletMB = walletMB;
-        
-/*         if(_walletMB != null)
-        _walletMB.TMPmultiplier.text = $"X {_activeIncome.ToString()}"; */
     }
 
     public void Update()
@@ -50,6 +47,7 @@ public class WalletController
     public void ReduceValue(int value)
     {
         _value -= value;
+        MatchText();
     }
 
     public void SetText(string targetText)

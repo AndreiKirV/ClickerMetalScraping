@@ -815,7 +815,6 @@ GameObject:
   - component: {fileID: 659391644}
   - component: {fileID: 659391647}
   - component: {fileID: 659391646}
-  - component: {fileID: 659391645}
   m_Layer: 0
   m_Name: MainPanel
   m_TagString: Untagged
@@ -849,18 +848,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &659391645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659391643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60d9f1f9ed663a94bac13d634ad76ce2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &659391646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,7 +1090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.07}
   m_AnchorMax: {x: 1, y: 0.897}
-  m_AnchoredPosition: {x: 0, y: -385.147}
+  m_AnchoredPosition: {x: 0, y: -385.14703}
   m_SizeDelta: {x: 0, y: -770.293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922065880
@@ -1156,22 +1143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caae6d33ae5ba948a9d5ba8b0d14e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefs:
-  - {fileID: 4829202723124853729, guid: 925ebcc0b20e0c14a87fefe8d525be20, type: 3}
-  - {fileID: 6323464362643664081, guid: 3e2ffe0b05dcb8b428baaf2854b6198a, type: 3}
-  - {fileID: 5316982961858114087, guid: a327a31d1b260434f82a621085a36c6d, type: 3}
-  - {fileID: 8422135811599024085, guid: 366815242fe527c419809fb0338588a5, type: 3}
-  - {fileID: 2108730927216357768, guid: 4cef614fa6c5ea34da833a8762e050e1, type: 3}
-  - {fileID: 1279925693180493023, guid: ba3ae5c2809642d428ecb5c77d5c902b, type: 3}
-  - {fileID: 5088658033266028231, guid: 9cce9b4818e2d0d44ae1a75368201419, type: 3}
-  _currentItem: {fileID: 0}
-  _button: {fileID: 1963542112}
-  _parent: {fileID: 922065879}
-  _distributionParametersNotAlone:
-    Initialized: 1
-    MaxSize: {x: 0, y: 0}
-    Rows: 5
-    Colomns: 5
 --- !u!1 &1002407212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,17 +1560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caae6d33ae5ba948a9d5ba8b0d14e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefs:
-  - {fileID: 2036130161812122227, guid: 14a4990064c5d18439e638c680329937, type: 3}
-  - {fileID: 7589547218411768373, guid: 8f41e3e9024e98240b49b4005eb53d6a, type: 3}
-  _currentItem: {fileID: 0}
-  _button: {fileID: 1548180188}
-  _parent: {fileID: 1283301467}
-  _distributionParametersNotAlone:
-    Initialized: 0
-    MaxSize: {x: 0, y: 0}
-    Rows: 0
-    Colomns: 0
 --- !u!1 &1411218431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,6 +1703,12 @@ MonoBehaviour:
   - Name: Fans
     Prefs:
     - {fileID: 4829202723124853729, guid: 925ebcc0b20e0c14a87fefe8d525be20, type: 3}
+    - {fileID: 6323464362643664081, guid: 3e2ffe0b05dcb8b428baaf2854b6198a, type: 3}
+    - {fileID: 5316982961858114087, guid: a327a31d1b260434f82a621085a36c6d, type: 3}
+    - {fileID: 8422135811599024085, guid: 366815242fe527c419809fb0338588a5, type: 3}
+    - {fileID: 2108730927216357768, guid: 4cef614fa6c5ea34da833a8762e050e1, type: 3}
+    - {fileID: 1279925693180493023, guid: ba3ae5c2809642d428ecb5c77d5c902b, type: 3}
+    - {fileID: 5088658033266028231, guid: 9cce9b4818e2d0d44ae1a75368201419, type: 3}
     CurrentItem: {fileID: 0}
     Button: {fileID: 1963542112}
     Parent: {fileID: 922065879}
@@ -1751,7 +1717,7 @@ MonoBehaviour:
       MaxSize: {x: 0, y: 0}
       Rows: 5
       Colomns: 5
-    _elementMB: {fileID: 922065878}
+    ElementMB: {fileID: 922065882}
   - Name: Pale
     Prefs:
     - {fileID: 260605026866389197, guid: 211d2dcdcc96c3c4badf0a5e3534fc65, type: 3}
@@ -1764,7 +1730,7 @@ MonoBehaviour:
       MaxSize: {x: 0, y: 0}
       Rows: 0
       Colomns: 0
-    _elementMB: {fileID: 4986825495594385176}
+    ElementMB: {fileID: 9141113646360158833}
   - Name: Weapon
     Prefs:
     - {fileID: 5032006864304146193, guid: c49848753380728438e90c7b7bf169cc, type: 3}
@@ -1778,7 +1744,7 @@ MonoBehaviour:
       MaxSize: {x: 0, y: 0}
       Rows: 0
       Colomns: 0
-    _elementMB: {fileID: 287351030151413319}
+    ElementMB: {fileID: 4396587457981802394}
   - Name: Hair
     Prefs:
     - {fileID: 2036130161812122227, guid: 14a4990064c5d18439e638c680329937, type: 3}
@@ -1791,7 +1757,7 @@ MonoBehaviour:
       MaxSize: {x: 0, y: 0}
       Rows: 0
       Colomns: 0
-    _elementMB: {fileID: 1283301466}
+    ElementMB: {fileID: 1283301471}
   - Name: Mask
     Prefs:
     - {fileID: 4207942709464819176, guid: 723dd0543b2e7174ea11fd2dac3e74cb, type: 3}
@@ -1806,12 +1772,15 @@ MonoBehaviour:
       MaxSize: {x: 0, y: 0}
       Rows: 0
       Colomns: 0
-    _elementMB: {fileID: 6433516955521337605}
-  _timerMB: {fileID: 528850780}
-  _walletMB: {fileID: 786738902}
-  _walletFansMB: {fileID: 1867520861}
-  _playerButton: {fileID: 11241332}
-  _fansButton: {fileID: 1963542112}
+    ElementMB: {fileID: 8332158733193761071}
+  _config:
+    TimerMB: {fileID: 528850780}
+    WalletMB: {fileID: 786738902}
+    WalletFansMB: {fileID: 1867520861}
+    PlayerButton: {fileID: 11241332}
+    FansButton:
+      Button: {fileID: 1963542112}
+      Price: 5
 --- !u!1 &1487974041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3186,7 +3155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.07}
   m_AnchorMax: {x: 1, y: 0.897}
-  m_AnchoredPosition: {x: 0, y: -334.6741}
+  m_AnchoredPosition: {x: 0, y: -334.67413}
   m_SizeDelta: {x: 0, y: -669.347}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3534916975784873669
@@ -3266,18 +3235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caae6d33ae5ba948a9d5ba8b0d14e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefs:
-  - {fileID: 5032006864304146193, guid: c49848753380728438e90c7b7bf169cc, type: 3}
-  - {fileID: 4364432893078007572, guid: a816f6b937b0c544eabcbde41e400bd8, type: 3}
-  - {fileID: 5779483611017699432, guid: 7480bdf7c4cf49d4b8c4e2bbc187092a, type: 3}
-  _currentItem: {fileID: 0}
-  _button: {fileID: 1002407213}
-  _parent: {fileID: 2696932408095139492}
-  _distributionParametersNotAlone:
-    Initialized: 0
-    MaxSize: {x: 0, y: 0}
-    Rows: 0
-    Colomns: 0
 --- !u!1 &4986825495594385176
 GameObject:
   m_ObjectHideFlags: 0
@@ -3358,16 +3315,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caae6d33ae5ba948a9d5ba8b0d14e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefs:
-  - {fileID: 4932322809108252059, guid: 3a5ff865fd43c53499788d8b2229ce73, type: 3}
-  _currentItem: {fileID: 0}
-  _button: {fileID: 1737453094}
-  _parent: {fileID: 3559246024866015886}
-  _distributionParametersNotAlone:
-    Initialized: 0
-    MaxSize: {x: 0, y: 0}
-    Rows: 0
-    Colomns: 0
 --- !u!1 &6433516955521337605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3447,19 +3394,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caae6d33ae5ba948a9d5ba8b0d14e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefs:
-  - {fileID: 4207942709464819176, guid: 723dd0543b2e7174ea11fd2dac3e74cb, type: 3}
-  - {fileID: 5380307483971880013, guid: dbb739f8705a9244bb27881c7da5b025, type: 3}
-  - {fileID: 2930990178504800649, guid: 0eac36fe7f8a860458ce0e40755b9368, type: 3}
-  - {fileID: 5722245249852830795, guid: d8837379345b0f34c8bc4587cfff33ea, type: 3}
-  _currentItem: {fileID: 0}
-  _button: {fileID: 619434942}
-  _parent: {fileID: 5103914522936652980}
-  _distributionParametersNotAlone:
-    Initialized: 0
-    MaxSize: {x: 0, y: 0}
-    Rows: 0
-    Colomns: 0
 --- !u!224 &8688452161132491142
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3507,17 +3441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caae6d33ae5ba948a9d5ba8b0d14e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefs:
-  - {fileID: 260605026866389197, guid: 211d2dcdcc96c3c4badf0a5e3534fc65, type: 3}
-  - {fileID: 1590420747398398243, guid: 679202e95351eff4c9a470b04ef7d3a8, type: 3}
-  _currentItem: {fileID: 0}
-  _button: {fileID: 1487974043}
-  _parent: {fileID: 8688452161132491142}
-  _distributionParametersNotAlone:
-    Initialized: 0
-    MaxSize: {x: 0, y: 0}
-    Rows: 0
-    Colomns: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

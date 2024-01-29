@@ -13,7 +13,7 @@ public class PlayerPrefabConfig
     public Button Button;
     public Transform Parent;
     public NotAlone DistributionParametersNotAlone;
-    public GameObject _elementMB;
+    public PlayerPrefabMB ElementMB;
 
     [Serializable]
     public struct NotAlone
