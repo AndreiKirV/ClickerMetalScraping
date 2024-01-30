@@ -6,24 +6,22 @@ using UnityEngine.UI;
 
 public class PlayerPrefabsController : MonoBehaviour
 {
-    [SerializeField] private List<PlayerPrefabConfig> _playerPrefabConfigs;
+    [SerializeField] private PlayerPrefabConfig _fansCfg;
+    [SerializeField] private PlayerPrefabConfig _paleCfg;
+    [SerializeField] private PlayerPrefabConfig _weaponCfg;
+    [SerializeField] private PlayerPrefabConfig _hairCfg;
+    [SerializeField] private PlayerPrefabConfig _maskCfg;
+    [SerializeField] private PlayerPrefabConfig _backgroundCfg;
     [SerializeField] private Config _config;
 
     [Serializable]
     private class Config
     {
+        public float MultiplyingFactor;
         public TimerMB TimerMB;
         public WalletMB WalletMB;
         public WalletMB WalletFansMB;
         public Button PlayerButton;
-        public ButtonItem FansButton;
-
-        [Serializable]
-        public class ButtonItem
-        {
-            public Button Button;
-            public int Price;
-        }
     }
 
     private TimerController _timerController = new TimerController();
@@ -40,29 +38,29 @@ public class PlayerPrefabsController : MonoBehaviour
 
         _timerController.SetSecTickAction(_walletController.IncreaseAmountOfPassiveIncome);
         _config.PlayerButton.onClick.AddListener(_walletController.IncreaseByAmountActiveIncome);
-        //TODO
-        PlayerPrefabMB tempMB = _playerPrefabConfigs.Find(MB => MB.Name == "Fans").ElementMB;
-            bool isPurchaseOption = _walletController.Value > _config.FansButton.Price;
-            tempMB.SetCondition(ref isPurchaseOption);
-
-        _config.FansButton.Button.onClick.AddListener(() =>
+        
+        _fansCfg.Button.onClick.AddListener(() =>
         {
-            
-
-            if (_walletController.Value >= _config.FansButton.Price)
+            if (_walletController.Value >= _fansCfg.Price)
             {
                 _walletFansController.IncreaseByAmountActiveIncome();
                 _walletController.SetPassiveIncome(_walletFansController.Value);
-                _walletController.ReduceValue(_config.FansButton.Price);
+                _walletController.ReduceValue(_fansCfg.Price);
+                _fansCfg.Price = (int)(_fansCfg.Price * _config.MultiplyingFactor);
             }
         });
-        //TODO
     }
 
     private void InitPlayerPrefabButtons()
     {
-        foreach (var item in _playerPrefabConfigs)
-            item.ElementMB.Init(item);
+        _fansCfg.ElementMB.Init(_fansCfg);
+        _paleCfg.ElementMB.Init(_paleCfg);
+        _weaponCfg.ElementMB.Init(_weaponCfg);
+        _hairCfg.ElementMB.Init(_hairCfg);
+        _maskCfg.ElementMB.Init(_maskCfg);
+        _backgroundCfg.ElementMB.Init(_backgroundCfg);
+
+        _fansCfg.ElementMB.SetWallet(_walletController);
     }
 
     private void Update()

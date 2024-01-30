@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 619434943}
   - component: {fileID: 619434942}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: MaskButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1008,7 +1008,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 922065879}
-  - {fileID: 3498351023974956757}
   - {fileID: 8688452161132491142}
   m_Father: {fileID: 659391644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1156,7 +1155,7 @@ GameObject:
   - component: {fileID: 1002407214}
   - component: {fileID: 1002407213}
   m_Layer: 0
-  m_Name: Button (2)
+  m_Name: WeaponButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1699,8 +1698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22fdf3ef71359fe4297a371544bee1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefabConfigs:
-  - Name: Fans
+  _fansCfg:
+    Name: Fans
     Prefs:
     - {fileID: 4829202723124853729, guid: 925ebcc0b20e0c14a87fefe8d525be20, type: 3}
     - {fileID: 6323464362643664081, guid: 3e2ffe0b05dcb8b428baaf2854b6198a, type: 3}
@@ -1718,7 +1717,9 @@ MonoBehaviour:
       Rows: 5
       Colomns: 5
     ElementMB: {fileID: 922065882}
-  - Name: Pale
+    Price: 5
+  _paleCfg:
+    Name: Pale
     Prefs:
     - {fileID: 260605026866389197, guid: 211d2dcdcc96c3c4badf0a5e3534fc65, type: 3}
     - {fileID: 1590420747398398243, guid: 679202e95351eff4c9a470b04ef7d3a8, type: 3}
@@ -1731,7 +1732,9 @@ MonoBehaviour:
       Rows: 0
       Colomns: 0
     ElementMB: {fileID: 9141113646360158833}
-  - Name: Weapon
+    Price: 5
+  _weaponCfg:
+    Name: Weapon
     Prefs:
     - {fileID: 5032006864304146193, guid: c49848753380728438e90c7b7bf169cc, type: 3}
     - {fileID: 4364432893078007572, guid: a816f6b937b0c544eabcbde41e400bd8, type: 3}
@@ -1745,7 +1748,9 @@ MonoBehaviour:
       Rows: 0
       Colomns: 0
     ElementMB: {fileID: 4396587457981802394}
-  - Name: Hair
+    Price: 5
+  _hairCfg:
+    Name: Hair
     Prefs:
     - {fileID: 2036130161812122227, guid: 14a4990064c5d18439e638c680329937, type: 3}
     - {fileID: 7589547218411768373, guid: 8f41e3e9024e98240b49b4005eb53d6a, type: 3}
@@ -1758,7 +1763,9 @@ MonoBehaviour:
       Rows: 0
       Colomns: 0
     ElementMB: {fileID: 1283301471}
-  - Name: Mask
+    Price: 5
+  _maskCfg:
+    Name: Mask
     Prefs:
     - {fileID: 4207942709464819176, guid: 723dd0543b2e7174ea11fd2dac3e74cb, type: 3}
     - {fileID: 5380307483971880013, guid: dbb739f8705a9244bb27881c7da5b025, type: 3}
@@ -1773,14 +1780,27 @@ MonoBehaviour:
       Rows: 0
       Colomns: 0
     ElementMB: {fileID: 8332158733193761071}
+    Price: 5
+  _backgroundCfg:
+    Name: Background
+    Prefs:
+    - {fileID: 4932322809108252059, guid: 3a5ff865fd43c53499788d8b2229ce73, type: 3}
+    CurrentItem: {fileID: 0}
+    Button: {fileID: 1737453094}
+    Parent: {fileID: 3559246024866015886}
+    DistributionParametersNotAlone:
+      Initialized: 0
+      MaxSize: {x: 0, y: 0}
+      Rows: 0
+      Colomns: 0
+    ElementMB: {fileID: 5883416935627196333}
+    Price: 200
   _config:
+    MultiplyingFactor: 1.5
     TimerMB: {fileID: 528850780}
     WalletMB: {fileID: 786738902}
     WalletFansMB: {fileID: 1867520861}
     PlayerButton: {fileID: 11241332}
-    FansButton:
-      Button: {fileID: 1963542112}
-      Price: 5
 --- !u!1 &1487974041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,7 +1814,7 @@ GameObject:
   - component: {fileID: 1487974044}
   - component: {fileID: 1487974043}
   m_Layer: 0
-  m_Name: Button (4)
+  m_Name: PaleButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2048,7 +2068,7 @@ GameObject:
   - component: {fileID: 1548180189}
   - component: {fileID: 1548180188}
   m_Layer: 0
-  m_Name: Button (3)
+  m_Name: HairButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2537,7 +2557,7 @@ GameObject:
   - component: {fileID: 1737453095}
   - component: {fileID: 1737453094}
   m_Layer: 0
-  m_Name: Button (6)
+  m_Name: BackgroundButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3109,55 +3129,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &3067588402948911861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7396793441308470865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b592fc74d146a4a46b852797b9fbf50c, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!224 &3498351023974956757
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7396793441308470865}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 868570911}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.07}
-  m_AnchorMax: {x: 1, y: 0.897}
-  m_AnchoredPosition: {x: 0, y: -334.67413}
-  m_SizeDelta: {x: 0, y: -669.347}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3534916975784873669
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3334,24 +3305,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &7396793441308470865
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3498351023974956757}
-  - component: {fileID: 9078531888145724588}
-  - component: {fileID: 3067588402948911861}
-  m_Layer: 0
-  m_Name: FansView
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!114 &8332158733193761070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3413,14 +3366,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &9078531888145724588
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7396793441308470865}
-  m_CullTransparentMesh: 1
 --- !u!222 &9141113646360158832
 CanvasRenderer:
   m_ObjectHideFlags: 0

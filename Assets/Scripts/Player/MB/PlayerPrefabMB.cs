@@ -9,26 +9,28 @@ using UnityEngine.UI;
 public class PlayerPrefabMB : MonoBehaviour
 {
     private PlayerPrefabConfig _prefabConfig;
-
     private int _currentIndex = -1;
     private float[,] _field;
-    private bool _condition = true;
+    private WalletController _wallet;
 
-    public void SetCondition(ref bool condition)
+    public void SetWallet(WalletController wallet)
     {
-        _condition = condition;
+        _wallet = wallet;
     }
 
     public void Init(PlayerPrefabConfig cfg)
     {
-        _prefabConfig = cfg;//TODO
-        _prefabConfig.Button.onClick.AddListener(() =>
-        {
-            Debug.Log(_condition);
-            if(_condition)
+        _prefabConfig = cfg;
+
+        _prefabConfig.Button.onClick.AddListener(() => {
+            bool checkPrice = true;
+
+            if(_wallet != null)
+            checkPrice = _prefabConfig.Price <= _wallet.Value;
+
+            if(checkPrice)
             ActivateNextItem();
-        }
-        );//TODO
+            });
 
         if (_prefabConfig.CurrentItem != null)
         {

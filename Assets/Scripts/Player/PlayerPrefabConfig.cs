@@ -14,6 +14,7 @@ public class PlayerPrefabConfig
     public Transform Parent;
     public NotAlone DistributionParametersNotAlone;
     public PlayerPrefabMB ElementMB;
+    public int Price;
 
     [Serializable]
     public struct NotAlone
