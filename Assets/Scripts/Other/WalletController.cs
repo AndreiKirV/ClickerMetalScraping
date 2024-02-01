@@ -37,16 +37,24 @@ public class WalletController
     public void IncreasePassiveIncome(int value)
     {
         _passiveIncome += value;
+        MatchText();
     }
 
     public void SetPassiveIncome(int value)
     {
         _passiveIncome = value;
+        MatchText();
     }
 
     public void ReduceValue(int value)
     {
         _value -= value;
+        MatchText();
+    }
+
+    public void SetValue(int value)
+    {
+        _value = value;
         MatchText();
     }
 

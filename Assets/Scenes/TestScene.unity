@@ -1713,7 +1713,7 @@ MonoBehaviour:
     Parent: {fileID: 922065879}
     DistributionParametersNotAlone:
       Initialized: 1
-      MaxSize: {x: 0, y: 0}
+      MaxSize: {x: 1, y: 0}
       Rows: 5
       Colomns: 5
     ElementMB: {fileID: 922065882}
@@ -1796,7 +1796,7 @@ MonoBehaviour:
     ElementMB: {fileID: 5883416935627196333}
     Price: 200
   _config:
-    MultiplyingFactor: 1.5
+    MultiplyingFactor: 1.2
     TimerMB: {fileID: 528850780}
     WalletMB: {fileID: 786738902}
     WalletFansMB: {fileID: 1867520861}

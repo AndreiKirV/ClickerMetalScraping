@@ -49,6 +49,8 @@ public class PlayerPrefabsController : MonoBehaviour
                 _fansCfg.Price = (int)(_fansCfg.Price * _config.MultiplyingFactor);
             }
         });
+
+        _walletController.SetValue(999999);
     }
 
     private void InitPlayerPrefabButtons()
