@@ -50,6 +50,11 @@ public class PlayerPrefabsController : MonoBehaviour
             }
         });
 
+        _weaponCfg.Button.onClick.AddListener(() =>
+        {
+
+        });
+
         _walletController.SetValue(999999);
     }
 
