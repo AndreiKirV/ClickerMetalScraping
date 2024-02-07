@@ -37,8 +37,19 @@ public class PlayerPrefabsController : MonoBehaviour
         InitPlayerPrefabButtons();
 
         _timerController.SetSecTickAction(_walletController.IncreaseAmountOfPassiveIncome);
-        _config.PlayerButton.onClick.AddListener(_walletController.IncreaseByAmountActiveIncome);
-        
+
+        SetButtonSubscriptions();
+
+        _walletController.SetValue(999999);
+    }
+
+    private void SetButtonSubscriptions()
+    {
+        _config.PlayerButton.onClick.AddListener(() =>
+        {
+            _walletController.IncreaseByAmountActiveIncome();
+        });
+
         _fansCfg.Button.onClick.AddListener(() =>
         {
             if (_walletController.Value >= _fansCfg.Price)
@@ -46,16 +57,19 @@ public class PlayerPrefabsController : MonoBehaviour
                 _walletFansController.IncreaseByAmountActiveIncome();
                 _walletController.SetPassiveIncome(_walletFansController.Value);
                 _walletController.ReduceValue(_fansCfg.Price);
-                _fansCfg.Price = (int)(_fansCfg.Price * _config.MultiplyingFactor);
+                _fansCfg.Price = (int)Math.Ceiling(_fansCfg.Price * _config.MultiplyingFactor);
             }
         });
 
         _weaponCfg.Button.onClick.AddListener(() =>
         {
-
+            if (_walletController.Value >= _weaponCfg.Price)
+            {
+                _walletController.SetActiveIncome((int)Math.Ceiling(_walletController.ActiveIncome * _config.MultiplyingFactor));
+                _walletController.ReduceValue(_weaponCfg.Price);
+                _weaponCfg.Price = (int)Math.Ceiling(_weaponCfg.Price * _config.MultiplyingFactor);
+            }
         });
-
-        _walletController.SetValue(999999);
     }
 
     private void InitPlayerPrefabButtons()
@@ -68,6 +82,7 @@ public class PlayerPrefabsController : MonoBehaviour
         _backgroundCfg.ElementMB.Init(_backgroundCfg);
 
         _fansCfg.ElementMB.SetWallet(_walletController);
+        _weaponCfg.ElementMB.SetWallet(_walletController);
     }
 
     private void Update()

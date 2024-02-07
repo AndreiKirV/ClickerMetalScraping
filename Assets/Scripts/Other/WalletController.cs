@@ -40,6 +40,12 @@ public class WalletController
         MatchText();
     }
 
+    public void SetActiveIncome(int value)
+    {
+        _activeIncome = value;
+        MatchText();
+    }
+
     public void SetPassiveIncome(int value)
     {
         _passiveIncome = value;
